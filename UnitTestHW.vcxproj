@@ -129,7 +129,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="UnitTestHW.cpp" />
-    <ClCompile Include="UnitTestHWTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UnitTestHW.h" />

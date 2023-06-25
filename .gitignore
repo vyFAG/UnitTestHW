@@ -41,3 +41,5 @@
 *.vsidx
 *.vsidx
 *.pdb
+*.log
+*.ilk
