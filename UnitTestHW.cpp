@@ -12,6 +12,8 @@ std::vector<double> SquareEquation::solve(double a, double b, double c)
     {
         return std::vector<double>();
     }
+
+    return std::vector<double>();
 }
 
 
