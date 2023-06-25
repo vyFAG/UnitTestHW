@@ -1,44 +1,49 @@
 #include <iostream>
-#include <cppunit/TestRunner.h>
-#include <cppunit/TestResult.h>
-#include <cppunit/TestResultCollector.h>
-#include <cppunit/extensions/HelperMacros.h>
-#include <cppunit/BriefTestProgressListener.h>
-#include <cppunit/extensions/TestFactoryRegistry.h>
+#include <cassert>
 
-class Test : public CPPUNIT_NS::TestCase
+#include "UnitTestHW.h"
+
+class Test
 {
-    CPPUNIT_TEST_SUITE(Test);
-    CPPUNIT_TEST(testHelloWorld);
-    CPPUNIT_TEST_SUITE_END();
-
 public:
-    void setUp(void) {}
-    void tearDown(void) {}
+    Test();
 
-protected:
-    void testHelloWorld(void) {
-        system("./hello >nul 2>nul");
-    }
+    bool checkEquation();
+
+    
+private:
+    SquareEquation* testObject;
+
 };
 
 
-CPPUNIT_TEST_SUITE_REGISTRATION(Test);
+
+
+Test::Test()
+{
+    testObject = new SquareEquation;
+}
+
+
+
+bool Test::checkEquation()
+{
+    bool testResult = true;
+
+    if (std::vector<double>() != testObject->solve(1, 0, 1))
+    {
+        assert("Test 1: function returned not empty array");
+        testResult = false;
+    }
+
+    return testResult;
+}
+
+
 
 int main()
-
 {
-    CPPUNIT_NS::TestResult controller;
+    Test newTest;
 
-    CPPUNIT_NS::TestResultCollector result;
-    controller.addListener(&result);
-
-    CPPUNIT_NS::BriefTestProgressListener progress;
-    controller.addListener(&progress);
-
-    CPPUNIT_NS::TestRunner runner;
-    runner.addTest(CPPUNIT_NS::TestFactoryRegistry::getRegistry().makeTest());
-    runner.run(controller);
-
-    return result.wasSuccessful() ? 0 : 1;
+    return newTest.checkEquation();
 }
