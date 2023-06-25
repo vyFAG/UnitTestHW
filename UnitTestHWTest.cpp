@@ -7,7 +7,7 @@
 
 bool checkDoubleEquality(double a, double b)
 {
-    if (abs(a - b) < eps)
+    if (abs(abs(a) - abs(b)) < eps)
     {
         return true;
     }
