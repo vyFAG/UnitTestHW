@@ -30,7 +30,7 @@ bool Test::checkEquation()
 {
     bool testResult = true;
 
-    if (std::vector<double>() != SquareEquation::solve(1, 0, 1))
+    if (std::vector<double>() != testObject->solve(1, 0, 1))
     {
         assert("Test 1: function returned not empty array");
         testResult = false;
