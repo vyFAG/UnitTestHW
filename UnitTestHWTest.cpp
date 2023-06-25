@@ -3,6 +3,20 @@
 
 #include "UnitTestHW.h"
 
+
+
+bool checkDoubleEquality(double a, double b)
+{
+    if (abs(r1 - r2) < SquareEquation::eps)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+
+
 class Test
 {
 public:
@@ -30,13 +44,22 @@ bool Test::checkEquation()
 {
     bool testResult = true;
 
-    if (std::vector<double>() != testObject->solve(1, 0, 1))
+    std::vector<double> rootsVector = {};
+
+    // Test 1
+    rootsVector = testObject->solve(1, 0, 1);
+
+    if (rootsVector != testObject->solve(1, 0, 1))
     {
         assert("Test 1: function returned not empty array");
         testResult = false;
     }
 
-    if (std::vector<double>(1, -1) != testObject->solve(1, 0, -1))
+    // Test 2
+    rootsVector = testObject->solve(1, 0, -1);
+
+    if (true == checkDoubleEquality(rootsVector[0], 1) &&
+        true == checkDoubleEquality(rootsVector[1], -1))
     {
         assert("Test 2: function returned not valid roots");
         testResult = false;

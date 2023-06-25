@@ -12,7 +12,7 @@ public:
     std::vector<double> solve(double a, double b, double c)
     {
         double discriminant = std::pow(b, 2) - 4 * a * c;
-        std::vector<double> roots;
+        std::vector<double> roots = {};
 
         if (discriminant < 0)
         {
@@ -29,4 +29,6 @@ public:
 
         return std::vector<double>();
     }
+
+    double eps = 0.000000000000001;
 };

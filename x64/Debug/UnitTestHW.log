@@ -1,5 +1,2 @@
 ﻿  UnitTestHW.cpp
-  UnitTestHWTest.cpp
-  Создание кода...
-UnitTestHWTest.obj : error LNK2005: main уже определен в UnitTestHW.obj
-C:\Users\User\Documents\GitHub\UnitTestHW\x64\Debug\UnitTestHW.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более
+  UnitTestHW.vcxproj -> C:\Users\User\Documents\GitHub\UnitTestHW\x64\Debug\UnitTestHW.exe
