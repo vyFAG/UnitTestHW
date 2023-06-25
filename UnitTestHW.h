@@ -23,6 +23,8 @@ public:
         {
             roots.push_back((-b + sqrt(discriminant)) / (2 * a));
             roots.push_back((-b - sqrt(discriminant)) / (2 * a));
+
+            return roots;
         }
 
         return std::vector<double>();
