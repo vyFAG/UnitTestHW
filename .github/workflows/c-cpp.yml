@@ -15,8 +15,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: install cppunit
       run: sudo apt install -y libcppunit-dev
-    - name: install User
-      run: sudo C:\Users\User\Documents\GitHub\UnitTestHW pub get
+    - name: install Configure
+      run: sudo ./ pub get
     - name: configure
       run: ./configure.json
     - name: make
