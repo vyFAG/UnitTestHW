@@ -45,5 +45,5 @@ int main()
 {
     Test newTest;
 
-    return newTest.checkEquation();
+    return !newTest.checkEquation();
 }
