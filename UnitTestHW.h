@@ -6,6 +6,10 @@
 
 
 
+const double eps = 0.000000000000001;
+
+
+
 class SquareEquation
 {
 public:
@@ -29,6 +33,4 @@ public:
 
         return std::vector<double>();
     }
-
-    double eps = 0.000000000000001;
 };

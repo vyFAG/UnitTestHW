@@ -7,7 +7,7 @@
 
 bool checkDoubleEquality(double a, double b)
 {
-    if (abs(r1 - r2) < SquareEquation::eps)
+    if (abs(a - b) < SquareEquation::eps)
     {
         return true;
     }
