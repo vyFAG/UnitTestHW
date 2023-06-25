@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: install configure
+      run: git update-index --chmod=+x ./configure.json
     - name: install cppunit
       run: sudo apt install -y libcppunit-dev
-    - name: install Configure
-      run: sudo / pub get
     - name: configure
       run: ./configure.json
     - name: make
