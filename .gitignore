@@ -34,3 +34,10 @@
 *.db-shm
 *.db-wal
 *.opendb
+*.tlog
+*.tlog
+*.tlog
+.vs/UnitTestHW/v17/.suo
+*.vsidx
+*.vsidx
+*.pdb

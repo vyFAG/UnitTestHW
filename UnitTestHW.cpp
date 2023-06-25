@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <cmath>
 #include "UnitTestHW.h"
 
 
@@ -17,5 +18,4 @@ std::vector<double> SquareEquation::solve(double a, double b, double c)
 
 int main()
 {
-    std::cout << "Hello World!\n";
 }
