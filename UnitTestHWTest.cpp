@@ -36,6 +36,12 @@ bool Test::checkEquation()
         testResult = false;
     }
 
+    if (std::vector<double>(1, -1) != testObject->solve(1, 0, -1))
+    {
+        assert("Test 2: function returned not valid roots");
+        testResult = false;
+    }
+
     return testResult;
 }
 
