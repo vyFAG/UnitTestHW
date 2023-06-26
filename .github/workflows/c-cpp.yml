@@ -26,7 +26,6 @@ jobs:
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         id: run_msbuild
-        working-directory: C:\Users\User\Documents\GitHub\UnitTestHW\
         run: msbuild .\UnitTestHW.sln
       
       - name: Setup VSTest and add to PATH
