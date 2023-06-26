@@ -21,15 +21,21 @@ jobs:
         id: setup_msbuild
       
       - name: Run MSBuild
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         id: run_msbuild
         working-directory: $
         run: msbuild .\UnitTestHW.sln
       
       - name: Setup VSTest and add to PATH
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         uses: darenm/Setup-VSTest@v1
         id: setup_vstest
       
       - name: Run VSTest
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         id: run_vstest
         working-directory: $\x64\Debug\
         run: vstest.console.exe /Platform:x64 .\UnitTest.dll
