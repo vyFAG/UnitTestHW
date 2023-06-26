@@ -4,9 +4,8 @@
 
 int main()
 {
-    SquareEquation testObj;
-
-    std::vector<double> tmp = testObj.solve(1, 0, -1);
+    SquareEquation tmp;
+    tmp.solve(0.4, -1, 0.4);
 
     return 0;
 }

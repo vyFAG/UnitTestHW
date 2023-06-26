@@ -8,14 +8,28 @@ on:
 
 jobs:
   build-and-test:
-
-    runs-on: ubuntu-latest
-
+    runs-on: windows-latest
+    name: Run MSBuild and VSTest
+  
     steps:
-    - uses: actions/checkout@v3
-    - name: configure
-      run: chmod +x ./configure.json
-    - name: make
-      run: make
-    - name: make test
-      run: make test
+        - name: Checkout code
+            uses: actions/checkout@v2.1.0
+            id: checkout_code
+    
+        - name: Setup MSBuild and add to PATH
+            uses: microsoft/setup-msbuild@v1.0.0
+            id: setup_msbuild
+    
+        - name: Run MSBuild
+            id: run_msbuild
+            working-directory: $
+            run: msbuild .\UnitTestHW.sln
+    
+        - name: Setup VSTest and add to PATH
+            uses: darenm/Setup-VSTest@v1
+            id: setup_vstest
+    
+        - name: Run VSTest
+            id: run_vstest
+            working-directory: $\x64\Debug\
+            run: vstest.console.exe /Platform:x64 .\UnitTest.dll
