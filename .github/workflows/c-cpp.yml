@@ -38,5 +38,4 @@ jobs:
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         id: run_vstest
-        working-directory: $\x64\Debug\
         run: vstest.console.exe /Platform:x64 .\UnitTest.dll
